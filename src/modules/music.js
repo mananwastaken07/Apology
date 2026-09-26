@@ -4,12 +4,14 @@
  * Remembers play state in sessionStorage.
  */
 
+import { getAssetPath } from '../utils.js';
+
 export class MusicPlayer {
   constructor(musicPath) {
     this.btn = document.getElementById('music-toggle');
-    this.musicPath = musicPath;
+    this.musicPath = getAssetPath(musicPath);
 
-    this.audio = new Audio(musicPath);
+    this.audio = new Audio(this.musicPath);
     this.audio.loop = true;
     this.audio.volume = 0.25;
     this.audio.preload = 'auto';
@@ -18,10 +20,11 @@ export class MusicPlayer {
 
     // Graceful error handling with fallback
     this.audio.addEventListener('error', () => {
-      if (this.musicPath !== '/assets/romantic_bg.mp3') {
+      const fallbackPath = getAssetPath('/assets/romantic_bg.mp3');
+      if (this.musicPath !== fallbackPath) {
         console.log('our-song.mp3 not found, trying romantic_bg.mp3 fallback...');
-        this.musicPath = '/assets/romantic_bg.mp3';
-        this.audio.src = '/assets/romantic_bg.mp3';
+        this.musicPath = fallbackPath;
+        this.audio.src = fallbackPath;
         this.audio.load();
       } else {
         this.hasError = true;

@@ -4,6 +4,7 @@
  */
 
 import { CONFIG } from '../config.js';
+import { getAssetPath } from '../utils.js';
 
 export class PhotoGallery {
   constructor() {
@@ -63,7 +64,7 @@ export class PhotoGallery {
       img.className = 'gallery__img';
       img.alt = photo.caption || `Memory ${index + 1}`;
       img.loading = 'lazy';
-      img.dataset.src = photo.src;
+      img.dataset.src = getAssetPath(photo.src);
 
       // Placeholder background while loading
       img.style.backgroundColor = '#fde8ed';
@@ -134,7 +135,7 @@ export class PhotoGallery {
     this.photos.forEach((photo, index) => {
       const img = document.createElement('img');
       img.className = 'photo-bg-item';
-      img.src = photo.src;
+      img.src = getAssetPath(photo.src);
       img.alt = '';
       img.loading = 'lazy';
 
@@ -172,7 +173,7 @@ export class PhotoGallery {
   openLightbox(photo) {
     if (!this.lightbox || !this.lightboxImg) return;
 
-    this.lightboxImg.src = photo.src;
+    this.lightboxImg.src = getAssetPath(photo.src);
     this.lightboxImg.alt = photo.caption || '';
     if (this.lightboxCaption) {
       this.lightboxCaption.textContent = photo.caption || '';
@@ -193,7 +194,7 @@ export class PhotoGallery {
   setupFinalPhoto() {
     const img = document.getElementById('final-photo-img');
     if (img && CONFIG.finalPhoto) {
-      img.src = CONFIG.finalPhoto;
+      img.src = getAssetPath(CONFIG.finalPhoto);
       img.addEventListener('error', () => {
         // Hide final photo section if image doesn't load
         const section = document.getElementById('final-photo-section');
