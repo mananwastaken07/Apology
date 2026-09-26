@@ -14,6 +14,49 @@
 </head>
 <body>
 
+  <!-- ═══════════ UNLOCK SCREEN OVERLAY ═══════════ -->
+  <div id="unlock-screen" class="unlock-screen" role="dialog" aria-modal="true" aria-label="Secret Entrance">
+    <canvas id="unlock-particles-canvas" class="unlock-canvas" aria-hidden="true"></canvas>
+    <div class="unlock-container">
+      <div id="unlock-heart-icon" class="unlock-heart-icon">❤️</div>
+      <div id="unlock-text-group" class="unlock-text-group">
+        <p id="unlock-line-1" class="unlock-line unlock-line--subtle">Before you come in...</p>
+        <p id="unlock-line-2" class="unlock-line unlock-line--main">I need one thing from you. ❤️</p>
+        <p id="unlock-line-3" class="unlock-line unlock-line--prompt">Enter the date.</p>
+      </div>
+
+      <form id="unlock-form" class="unlock-form" autocomplete="off" onsubmit="return false;">
+        <div id="unlock-inputs-box" class="unlock-inputs-box">
+          <input type="text" id="unlock-dd" class="unlock-input" maxlength="2" placeholder="DD" inputmode="numeric" pattern="[0-9]*" aria-label="Day" autocomplete="off" />
+          <span class="unlock-separator">/</span>
+          <input type="text" id="unlock-mm" class="unlock-input" maxlength="2" placeholder="MM" inputmode="numeric" pattern="[0-9]*" aria-label="Month" autocomplete="off" />
+          <span class="unlock-separator">/</span>
+          <input type="text" id="unlock-yyyy" class="unlock-input unlock-input--year" maxlength="4" placeholder="YYYY" inputmode="numeric" pattern="[0-9]*" aria-label="Year" autocomplete="off" />
+        </div>
+        <button type="submit" id="unlock-btn" class="btn btn--glass btn--unlock">
+          <span class="btn__text">Unlock ❤️</span>
+        </button>
+        <p id="unlock-feedback" class="unlock-feedback" aria-live="polite"></p>
+      </form>
+
+      <div id="unlock-success-box" class="unlock-success-box" aria-hidden="true">
+        <h2 id="unlock-success-text" class="unlock-success-text">You remembered. ❤️</h2>
+        <div id="unlock-glowing-heart" class="unlock-glowing-heart">❤️</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ MOBILE NOTICE MODAL ═══════════ -->
+  <div id="mobile-notice-modal" class="modal" role="dialog" aria-modal="true" aria-label="Screen suggestion">
+    <div class="modal__overlay"></div>
+    <div class="modal__content glass-card">
+      <div class="modal__icon">📱✨</div>
+      <h3 class="modal__heading">Just a quick note ❤️</h3>
+      <p class="modal__text">This looks much better on a bigger screen. ❤️</p>
+      <button class="btn btn--glass modal__btn" id="mobile-continue-btn">Continue anyway</button>
+    </div>
+  </div>
+
   <!-- ═══════════ BACKGROUND LAYERS ═══════════ -->
   <canvas id="particles-canvas" aria-hidden="true"></canvas>
   <div id="photo-bg-container" aria-hidden="true"></div>

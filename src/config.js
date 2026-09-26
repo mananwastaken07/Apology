@@ -31,8 +31,15 @@ export const CONFIG = {
   // ── Her name (shown in subtle, personal touches) ──────────────
   girlfriendName: "Bacha",
 
+  // ── Secret Unlock Date (DD / MM / YYYY) ───────────────────────
+  unlockDate: {
+    day: 14,
+    month: 9,
+    year: 2026,
+  },
+
   // ── Background music file path ────────────────────────────────
-  // Place your mp3 in public/assets/
+  // Place your mp3 in public/assets/ (e.g. public/assets/our-song.mp3)
   music: "/assets/our-song.mp3",
 
   // ── Photo gallery ─────────────────────────────────────────────
@@ -40,16 +47,24 @@ export const CONFIG = {
   // Photos go in public/assets/photos/
   photos: [
     {
-      src: "/assets/photos/photo1.jpg",
+      src: "/assets/photos/photo1.jpeg",
       caption: "One of my favourite memories. ❤️",
     },
     {
-      src: "/assets/photos/photo2.jpg",
+      src: "/assets/photos/photo2.jpeg",
       caption: "You looked so cute here.",
     },
     {
-      src: "/assets/photos/photo3.jpg",
+      src: "/assets/photos/photo3.jpeg",
       caption: "I smile every time I see this.",
+    },
+    {
+      src: "/assets/photos/photo4.jpeg",
+      caption: "Every moment with you is special. ❤️",
+    },
+    {
+      src: "/assets/photos/photo5.jpeg",
+      caption: "Forever my favorite person. 🥰",
     },
   ],
 
@@ -61,8 +76,7 @@ export const CONFIG = {
 
   // ── Special final photo ───────────────────────────────────────
   // Shown at the very end after the celebration
-  // Place in public/assets/
-  finalPhoto: "/assets/favourite-photo.jpg",
+  finalPhoto: "/assets/photos/photo5.jpeg",
 
   // ── Your personal love letter ─────────────────────────────────
   // Write from the heart. Line breaks are preserved.

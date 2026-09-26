@@ -14,6 +14,7 @@ import { AnimationController } from './modules/animations.js';
 import { CelebrationEffect } from './modules/celebration.js';
 import { FloatingNav } from './modules/navigation.js';
 import { FloatingPhrases } from './modules/phrases.js';
+import { UnlockScreen } from './modules/unlock.js';
 
 class App {
   constructor() {
@@ -24,16 +25,29 @@ class App {
   }
 
   async init() {
-    // Initialize ambient systems
+    // Initialize ambient background systems
     new ParticleSystem();
     new CustomCursor();
-    new MusicPlayer(CONFIG.music);
+    this.musicPlayer = new MusicPlayer(CONFIG.music);
     new FloatingPhrases();
 
     // Populate love letter
     this.populateLoveLetter();
 
-    // Play hero sequence, wait for button click
+    // Initialize secret entrance unlock screen
+    const unlockScreen = new UnlockScreen(CONFIG.unlockDate, () => {
+      // Fade music in over 2.5s at 25% volume after user interaction (unlock)
+      this.musicPlayer.fadeIn(0.25, 2500);
+      this.musicPlayer.showControl();
+    });
+
+    // Wait for successful secret date unlock
+    await unlockScreen.start();
+
+    // Optional subtle mobile notice if opened on a phone screen
+    await UnlockScreen.checkMobileNotice();
+
+    // Play hero sequence, wait for user button click ("Give me a minute...")
     await this.animations.playHeroSequence();
 
     // Transition to main content
