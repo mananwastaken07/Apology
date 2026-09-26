@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You ❤️</title>
+  <meta name="description" content="A personal apology, made with love." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════ BACKGROUND LAYERS ═══════════ -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+  <div id="photo-bg-container" aria-hidden="true"></div>
+
+  <!-- ═══════════ CUSTOM CURSOR ═══════════ -->
+  <div id="custom-cursor" aria-hidden="true">
+    <span class="cursor-heart">♥</span>
+  </div>
+  <canvas id="cursor-trail" aria-hidden="true"></canvas>
+
+  <!-- ═══════════ FLOATING PHRASES ═══════════ -->
+  <div id="floating-phrases" aria-hidden="true"></div>
+
+  <!-- ═══════════ MUSIC TOGGLE ═══════════ -->
+  <button id="music-toggle" aria-label="Toggle background music" title="Play our song">
+    <span class="music-icon">🎵</span>
+  </button>
+
+  <!-- ═══════════ FLOATING NAVIGATION ═══════════ -->
+  <nav id="floating-nav" aria-label="Page navigation">
+    <div class="nav-pill">
+      <a href="#apology" class="nav-link" data-section="apology">Start</a>
+      <span class="nav-dot">·</span>
+      <a href="#memories" class="nav-link" data-section="memories">Us</a>
+      <span class="nav-dot">·</span>
+      <a href="#letter" class="nav-link" data-section="letter">Letter</a>
+      <span class="nav-dot">·</span>
+      <a href="#final-question" class="nav-link" data-section="final-question">End</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--            SECTION 1 — HERO / OPENING          -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="hero" class="section section--fullscreen">
+    <div class="hero__content">
+      <p class="hero__greeting" id="hero-greeting">Hey you... ❤️</p>
+      <h1 class="hero__heading" id="hero-heading">I know I messed up.</h1>
+      <p class="hero__subtext" id="hero-subtext">And before you decide to stay mad at me...</p>
+      <button class="btn btn--glass btn--hero" id="hero-btn" aria-label="Continue">
+        <span class="btn__icon">♡</span>
+        <span class="btn__text">Give me a minute...</span>
+      </button>
+      <p class="hero__promise" id="hero-promise">I promise this isn't a boring apology message. :)</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--        MAIN CONTENT (revealed after hero)       -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <main id="main-content" class="main-content">
+
+    <!-- SECTION 2 — APOLOGY -->
+    <section id="apology" class="section">
+      <div class="container">
+        <h2 class="section__heading reveal-up">Okay... I owe you an apology.</h2>
+        <div class="apology__lines">
+          <p class="apology__line reveal-up">I know what I said hurt you.</p>
+          <p class="apology__line reveal-up">And I understand why.</p>
+          <p class="apology__line reveal-up">Saying "I didn't mean it that way" doesn't magically erase how it made you feel.</p>
+          <p class="apology__line reveal-up">I said it, and I take responsibility for that.</p>
+          <p class="apology__line apology__line--emphasis reveal-up">I'm genuinely sorry.</p>
+        </div>
+        <div class="glass-card apology__realization reveal-up">
+          <h3 class="glass-card__title">What I realized</h3>
+          <p class="glass-card__text">It's not just about saying sorry. It's about understanding what went wrong and making sure it doesn't happen again. You deserve someone who thinks before they speak — and I'm working on being that person for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — CONFESSION CARDS -->
+    <section id="confession" class="section">
+      <div class="container">
+        <div class="confession__grid">
+          <div class="glass-card confession__card reveal-up" data-tilt>
+            <span class="confession__emoji">💗</span>
+            <h3 class="confession__title">What I did</h3>
+            <p class="confession__text">I said something careless without thinking about how it would land. I let my words get ahead of my heart, and that's not fair to you.</p>
+          </div>
+          <div class="glass-card confession__card reveal-up" data-tilt>
+            <span class="confession__emoji">🧠</span>
+            <h3 class="confession__title">What I realized</h3>
+            <p class="confession__text">That it doesn't matter what I meant — what matters is how it made you feel. Your feelings are valid, and I should have been more careful.</p>
+          </div>
+          <div class="glass-card confession__card reveal-up" data-tilt>
+            <span class="confession__emoji">🥺</span>
+            <h3 class="confession__title">What I actually mean</h3>
+            <p class="confession__text">You mean more to me than I sometimes show. You're not just someone I care about — you're the person I care about most.</p>
+          </div>
+          <div class="glass-card confession__card reveal-up" data-tilt>
+            <span class="confession__emoji">❤️</span>
+            <h3 class="confession__title">What I promise</h3>
+            <p class="confession__text">I promise to think before I speak. To listen more. To be the kind of partner you deserve. Not perfect — but always trying.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — PLAYFUL -->
+    <section id="playful" class="section">
+      <div class="container">
+        <h2 class="section__heading reveal-up">Things I'm guilty of...</h2>
+        <div class="playful__grid">
+          <div class="playful__card reveal-up"><span class="playful__emoji">🤦</span><p class="playful__text">Saying things before thinking</p></div>
+          <div class="playful__card reveal-up"><span class="playful__emoji">🫠</span><p class="playful__text">Being an idiot sometimes</p></div>
+          <div class="playful__card reveal-up"><span class="playful__emoji">😭</span><p class="playful__text">Making you angry</p></div>
+          <div class="playful__card reveal-up"><span class="playful__emoji">🧠</span><p class="playful__text">Temporarily losing my brain</p></div>
+          <div class="playful__card reveal-up"><span class="playful__emoji">❤️</span><p class="playful__text">Caring about you way too much</p></div>
+          <div class="playful__card reveal-up"><span class="playful__emoji">🫶</span><p class="playful__text">Still wanting to annoy you for the rest of my life</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — MEMORIES -->
+    <section id="memories" class="section">
+      <div class="container">
+        <h2 class="section__heading reveal-up">Us ❤️</h2>
+        <p class="section__subtitle reveal-up">Some of my favourite moments have you in them.</p>
+        <div id="photo-gallery" class="gallery"></div>
+      </div>
+    </section>
+
+    <!-- MEMORY TRANSITION -->
+    <section id="memory-transition" class="section section--fullscreen">
+      <div class="memory-transition__content">
+        <p class="memory-transition__line reveal-up">Funny how a bunch of random moments</p>
+        <p class="memory-transition__line reveal-up">can become some of your favourite memories.</p>
+        <p class="memory-transition__line memory-transition__line--accent reveal-up">And somehow, you're in most of mine. ❤️</p>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — LOVE LETTER -->
+    <section id="letter" class="section">
+      <div class="container">
+        <h2 class="section__heading reveal-up">One last thing...</h2>
+        <div class="letter__card reveal-up">
+          <div class="letter__content" id="letter-content"></div>
+          <p class="letter__signature" id="letter-signature"></p>
+          <div class="letter__heart" aria-hidden="true">♥</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7 — FINAL QUESTION -->
+    <section id="final-question" class="section section--fullscreen">
+      <div class="final__content">
+        <p class="final__so" id="final-so">So...</p>
+        <h2 class="final__question" id="final-question-text">Can I have my favourite person back? 🥺</h2>
+        <div class="final__buttons" id="final-buttons">
+          <button class="btn btn--yes" id="btn-yes" aria-label="Yes">
+            <span class="btn__icon">❤️</span>
+            <span class="btn__text">Yes</span>
+          </button>
+          <button class="btn btn--mad" id="btn-mad" aria-label="I'm still mad">
+            <span class="btn__icon">😤</span>
+            <span class="btn__text">I'm still mad</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8 — CELEBRATION -->
+    <section id="celebration" class="section section--fullscreen" aria-live="polite">
+      <div class="celebration__content">
+        <h2 class="celebration__heading" id="celebration-heading">Thank you ❤️</h2>
+        <p class="celebration__love" id="celebration-love">I love you.</p>
+        <p class="celebration__joke" id="celebration-joke">More than my ability to think before speaking apparently. 😭</p>
+      </div>
+    </section>
+
+    <!-- SECTION 9 — FINAL PHOTO -->
+    <section id="final-photo-section" class="section">
+      <div class="container">
+        <div class="final-photo__card reveal-up">
+          <img id="final-photo-img" src="" alt="My favourite person" class="final-photo__img" loading="lazy" />
+          <p class="final-photo__caption">My favourite person. ❤️</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════ STILL MAD MODAL ═══════════ -->
+  <div id="still-mad-modal" class="modal" role="dialog" aria-modal="true" aria-label="Response">
+    <div class="modal__overlay"></div>
+    <div class="modal__content glass-card">
+      <h3 class="modal__heading">That's fair. ❤️</h3>
+      <p class="modal__text">You have every right to be mad.</p>
+      <p class="modal__text">Take your time.</p>
+      <p class="modal__text">I'll be here.</p>
+      <button class="btn btn--glass modal__btn" id="modal-close-btn">Okay ❤️</button>
+    </div>
+  </div>
+
+  <!-- ═══════════ LIGHTBOX ═══════════ -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <div class="lightbox__overlay"></div>
+    <div class="lightbox__content">
+      <button class="lightbox__close" id="lightbox-close" aria-label="Close photo">×</button>
+      <img id="lightbox-img" src="" alt="" class="lightbox__img" />
+      <p class="lightbox__caption" id="lightbox-caption"></p>
+      <p class="lightbox__memory">I remember this one. ❤️</p>
+    </div>
+  </div>
+
+  <!-- ═══════════ CELEBRATION CANVAS ═══════════ -->
+  <canvas id="celebration-canvas" aria-hidden="true"></canvas>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
